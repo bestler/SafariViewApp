@@ -22,7 +22,7 @@ struct SFSafariView: UIViewControllerRepresentable {
          dismissButtonStyle: DismissButtonStyle = .done,
          preferredBarTintColor : UIColor? = .systemBackground,
          preferredControlTintColor : UIColor? = .tintColor,
-         isBarCollapsing: Bool = true,
+         isBarCollapsing: Bool = false,
          entersReaderIfAvailable: Bool = false) {
         self.url = url
         self.dismissButtonStyle = dismissButtonStyle
@@ -68,4 +68,10 @@ struct SFSafariView: UIViewControllerRepresentable {
         case cancel, close, done
     }
 
+}
+
+struct SafariView_Preview: PreviewProvider {
+    static var previews: some View {
+        SFSafariView(url: URL(string: "https://apple.com")!)
+    }
 }
